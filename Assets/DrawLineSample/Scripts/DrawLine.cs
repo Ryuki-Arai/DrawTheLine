@@ -5,16 +5,10 @@ using UnityEngine;
 public class DrawLine : MonoBehaviour
 {
     [SerializeField] float lineWidth = 0.5f;
-    [SerializeField] float deleteTime = 3;
     LineRenderer _lr;
     EdgeCollider2D _ec2d;
     List<Vector3> lineVec = new List<Vector3>(); 
     List<Vector2> edgeVec = new List<Vector2>();
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -34,6 +28,10 @@ public class DrawLine : MonoBehaviour
             edgeVec.Clear();
         }
     }
+
+    /// <summary>
+    /// クリック時にLineRendererとEdgeColliderを含むゲームオブジェクトを作成する
+    /// </summary>
     void CreateLine()
     {
         var obj = new GameObject($"LineObject");
@@ -47,11 +45,15 @@ public class DrawLine : MonoBehaviour
         _ec2d = obj.GetComponent<EdgeCollider2D>();
         _ec2d.SetPoints(edgeVec);
     }
+
+    /// <summary>
+    /// クリックされている間のシーン上のポインタの座標をゲームオブジェクトに追加する
+    /// </summary>
+    /// <param name="drawPoint">Z座標を0に直したポインタのVector座標3</param>
     void Drawing(Vector3 drawPoint)
     {
         if (lineVec.Count > 0 && drawPoint == lineVec[lineVec.Count - 1])
         {
-            Debug.Log("No Move");
             return;
         }
 
