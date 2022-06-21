@@ -264,7 +264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineWidth: 0.1
-  deleteTime: 0.1
 --- !u!4 &636275434
 Transform:
   m_ObjectHideFlags: 0

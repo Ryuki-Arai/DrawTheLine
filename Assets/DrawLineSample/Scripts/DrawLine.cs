@@ -5,6 +5,8 @@ using UnityEngine;
 public class DrawLine : MonoBehaviour
 {
     [SerializeField] float lineWidth = 0.5f;
+    [SerializeField] Material[] marerials;
+    int _matIndex = 0;
     LineRenderer _lr;
     EdgeCollider2D _ec2d;
     List<Vector3> lineVec = new List<Vector3>(); 
@@ -24,6 +26,7 @@ public class DrawLine : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
+            _matIndex++;
             lineVec.Clear();
             edgeVec.Clear();
         }
@@ -41,8 +44,10 @@ public class DrawLine : MonoBehaviour
         _lr = obj.GetComponent<LineRenderer>();
         _lr.startWidth = lineWidth;
         _lr.positionCount = lineVec.Count;
+        _lr.material = marerials[_matIndex % marerials.Length];
         _lr.SetPositions(lineVec.ToArray());
         _ec2d = obj.GetComponent<EdgeCollider2D>();
+        _ec2d.edgeRadius = lineWidth / 2;
         _ec2d.SetPoints(edgeVec);
     }
 
