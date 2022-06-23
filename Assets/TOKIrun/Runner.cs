@@ -15,6 +15,10 @@ public class Runner : MonoBehaviour
 
     void Update()
     {
-        
+        var velocity = this.transform.right;
+        velocity = velocity.normalized * _speed;
+        velocity.y = _rb2d.velocity.y;
+        _rb2d.velocity = velocity;
+        Debug.Log(_rb2d.velocity.x);
     }
 }

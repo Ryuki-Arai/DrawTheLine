@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DrawLine : MonoBehaviour
 {
+    [SerializeField] GameObject lineObject;
     [SerializeField] float lineWidth = 0.5f;
     [SerializeField] Material[] marerials;
     int _matIndex = 0;
