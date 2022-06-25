@@ -21,7 +21,7 @@ public class DrawLine : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-            Vector3 point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             point.z = 0f;
             Drawing(point);
         }
