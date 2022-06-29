@@ -9,18 +9,21 @@ public class DrawLine : MonoBehaviour
     [SerializeField] Material[] marerials;
     int _mIndex = 0;
     Line _line;
+    float _pointTime;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            _pointTime = 0;
             CreateLine();
         }
         if (Input.GetMouseButton(0))
         {
+            _pointTime += Time.deltaTime;
             var point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             point.z = 0f;
-            _line.AddPoints(point);
+            _line.AddPoints(point,_pointTime);
         }
         if (Input.GetMouseButtonUp(0))
         {

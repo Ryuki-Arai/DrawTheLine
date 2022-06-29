@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32dfd3c2224abf4bb4fc99fc3178292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineObject: {fileID: 1171629624375379934, guid: a39f40a9cbb905e459fdbad66c33614a, type: 3}
   lineWidth: 0.2
   marerials:
   - {fileID: 2100000, guid: 402c7f628fc17a84f8b176f06874e5e5, type: 2}
