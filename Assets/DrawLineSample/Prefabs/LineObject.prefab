@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6224755758310551978}
   - component: {fileID: 5214063628164791068}
   - component: {fileID: 6420575688887233210}
+  - component: {fileID: 6299142703985224196}
   m_Layer: 0
   m_Name: LineObject
   m_TagString: Untagged
@@ -140,7 +141,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1171629624375379934}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 62e5864ebb7d8124d84c4558baba278e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -153,3 +154,16 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &6299142703985224196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171629624375379934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f82a7850d4a1349ba186a0dec95409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deleteTime: 5

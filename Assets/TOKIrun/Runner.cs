@@ -19,6 +19,5 @@ public class Runner : MonoBehaviour
         velocity = velocity.normalized * _speed;
         velocity.y = _rb2d.velocity.y;
         _rb2d.velocity = velocity;
-        Debug.Log(_rb2d.velocity.x);
     }
 }
