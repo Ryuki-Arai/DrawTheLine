@@ -24,7 +24,7 @@ public class Line : MonoBehaviour
     
     void Update()
     {
-        Debug.Log(pointTime.Count);
+        if(pointTime.Count < 1) return;
         if(_time >= _deleteTime + pointTime[0])
         {
             lineVec.RemoveAt(0);
