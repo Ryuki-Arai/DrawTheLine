@@ -35,4 +35,4 @@ _ライン_
 * プレイヤーを誘導するための線。  
 * 当たり判定を付ける。  
 * 書かれたラインは指定秒後に書いた始点から消えていくようにする。
-![GameScreenMovie1](https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220702-131347_DrawTheLine.mp4 "GameScreenMovie1")  
+![GameScreenMovie1](https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220702-131347_DrawTheLine.gif "GameScreenMovie1")  
