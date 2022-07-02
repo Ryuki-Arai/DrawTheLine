@@ -9,6 +9,14 @@
 * Microsoft Visual Stdio 2022  
 
 ## タッチカービィ的なカジュアルゲームの開発  
+
+__ゲーム概要__  
+
+* 横スクロール型アクションゲーム  
+* ゲーム開始と同時にキャラうたーに合わせて画面がスクロールする ![GameScreenImage1](https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screenshot_20220702-160153_DrawTheLine.jpg "GameScreenImage1")  
+* キャラクターは地面や描かれた線の上を走れる ![GameScreenImage2](https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screenshot_20220702-160212_DrawTheLine.jpg "GameScreenImage2")  
+* ゲーム画面に点在するコイン(アイテム)を集めていく ![GameScreenImage3](https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screenshot_20220702-160204_DrawTheLine.jpg "GameScreenImage3")  
+
 __必要な実装__  
 
 _プレイヤー_  
@@ -27,3 +35,4 @@ _ライン_
 * プレイヤーを誘導するための線。  
 * 当たり判定を付ける。  
 * 書かれたラインは指定秒後に書いた始点から消えていくようにする。
+![GameScreenMovie1](https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220702-131347_DrawTheLine.mp4 "GameScreenMovie1")  
