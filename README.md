@@ -28,8 +28,8 @@ _遭遇した問題点_
 
 ### EdgeCollider2D まとめ
 
-[EdgeCollider2D概要(本当はこういう使い方らしい)](https://miyagame.net/edgecollider2d/)
-<font color="Red">EdgeCollider2D同士では衝突判定を取らないので注意！</font>
+[EdgeCollider2D概要(本当はこういう使い方らしい)](https://miyagame.net/edgecollider2d/)  
+**※EdgeCollider2D同士では衝突判定を取らないので注意**
 
 __本プロジェクトで使用した項目__
 1. `float EdgeCollider2D.edgeRadius{get; set;}` : 本コライダーは円形に取られる。そのコライダーの半径を指定する。
@@ -46,14 +46,14 @@ __ちょっと ~~ムカついた~~ 使いにくいと思ったところ__
 __ゲーム概要__  
 
 * 横スクロール型アクションゲーム  
-* ゲーム開始と同時にキャラうたーに合わせて画面がスクロールする <img width="600" alt="GameScreenImage1" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screenshot_20220702-160153_DrawTheLine.jpg">  
+* ゲーム開始と同時にキャラクターに合わせて画面がスクロールする <img width="600" alt="GameScreenImage1" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screenshot_20220702-160153_DrawTheLine.jpg">  
 * キャラクターは地面や描かれた線の上を走ることが出来る <img width="600" alt="GameScreenImage2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screenshot_20220702-160212_DrawTheLine.jpg">  
 * ゲーム画面に点在するコイン(アイテム)を集めていく <img width="600" alt="GameScreenImage3" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screenshot_20220702-160204_DrawTheLine.jpg">  
 
 __必要な実装__  
 
-_プレイヤー_  
-* ゲームの開始と同時に右に進み続ける  
+_キャラクター_  
+* ゲームの開始と同時に自動で右に進み続ける  
 * 地面や線の上を走り、コインやスターを集める。  
 
 _スター_
