@@ -51,7 +51,7 @@ public class Line : MonoBehaviour
         pointTime.Add(_pointTime);
     }
 
-    public void Destroy()
+    void Destroy()
     {
         if (_lr.positionCount <= 1)
         {

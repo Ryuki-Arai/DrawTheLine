@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TOKIrun/RunGame.unity
+    path: Assets/RunGame/RunGame.unity
     guid: 3b12e2d3d02c004469caab2cdaf012b7
   m_configObjects: {}
