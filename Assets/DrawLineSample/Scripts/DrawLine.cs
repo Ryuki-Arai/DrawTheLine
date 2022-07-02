@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DrawLine : MonoBehaviour
@@ -18,14 +16,14 @@ public class DrawLine : MonoBehaviour
             _pointTime = 0;
             CreateLine();
         }
-        if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0))
         {
             _pointTime += Time.deltaTime;
             var point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             point.z = 0f;
             _line.AddPoints(point,_pointTime);
         }
-        if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0))
         {
             _mIndex++;
         }
