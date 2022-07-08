@@ -43,26 +43,46 @@ __ちょっと ~~ムカついた~~ 使いにくいと思ったところ__
 
 ## タッチカービィ的なカジュアルゲームの開発  
 
-__ゲーム概要__  
-
+### ゲーム概要  
 * 横スクロール型アクションゲーム  
-* ゲーム開始と同時にキャラクターに合わせて画面がスクロールする <img width="600" alt="GameScreenImage1" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screenshot_20220702-160153_DrawTheLine.jpg">  
-* キャラクターは地面や描かれた線の上を走ることが出来る <img width="600" alt="GameScreenImage2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screenshot_20220702-160212_DrawTheLine.jpg">  
-* ゲーム画面に点在するコイン(アイテム)を集めていく <img width="600" alt="GameScreenImage3" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screenshot_20220702-160204_DrawTheLine.jpg">  
+* ゲーム開始と同時にキャラクターに合わせて画面がスクロールする 
+* キャラクターは地面や描かれた線の上を走ることが出来る 
+* ゲーム画面に点在するコイン(アイテム)を集めていく 
+<img width="600" alt="GameScreenMovie2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220708-230213_DrawTheLine.gif">  
 
-__必要な実装__  
 
+### ゲーム全体の流れ  
+__シーン__  
+_●タイトルシーン_  
+* ゲーム開始ボタン  
+　→ゲームシーンへ
+* スキンオプションボタン
+  * __選択画面__
+* オプションボタン
+  * 音量
+
+_●ゲームシーン_  
+* 一時停止ボタン
+  * 再開ボタン
+  * やり直しボタン
+  * タイトルへ戻るボタン
+* __リザルト画面__
+  * 終了ボタン
+    →タイトルへ
+
+### 必要な実装  
 _キャラクター_  
 * ゲームの開始と同時に自動で右に進み続ける  
 * 地面や線の上を走り、コインやスターを集める。  
+* 様々なスキンがあり、着せ替えが出来る。
 
-_スター_
-* 各ステージのスコアとなる。
-* ゲームシーン上に3つ配置される。
+_アイテム_
+* ゲームシーン上に適当に配置される。
+* キャラクターに成長をもたらす。
 
 _コイン_  
 * ゲームシーン上に適当に配置される。  
-* このコインを集めると、ユーザースキンやUIと交換できる。  
+* 集めることでユーザースキンやUIと交換できる。  
 
 _ライン_  
 * プレイヤーを誘導するための線。  
