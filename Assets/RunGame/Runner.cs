@@ -7,7 +7,10 @@ public class Runner : MonoBehaviour
     [SerializeField] float _speed;
     Rigidbody2D _rb2d;
 
-
+    void Awake()
+    {
+        GameSystem.Instance.SetRunner(this);
+    }
     void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
