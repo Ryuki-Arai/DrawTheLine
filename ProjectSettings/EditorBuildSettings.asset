@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/RunGame/RunTitle.unity
+    guid: ba207886613f6894abf59f489dba8295
+  - enabled: 1
     path: Assets/RunGame/RunGame.unity
     guid: 3b12e2d3d02c004469caab2cdaf012b7
   m_configObjects: {}

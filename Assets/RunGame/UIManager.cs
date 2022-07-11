@@ -8,14 +8,17 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] Slider _slider;
 
-    [SerializeField] GameObject _panel;
+    [SerializeField] GameObject _pausePanel;
+    [SerializeField] GameObject _crearPanel;
 
-    // Start is called before the first frame update
+    [SerializeField] string _title;
+     // Start is called before the first frame update
     void Start()
     {
         _slider.GetComponent<Slider>();
         _slider.maxValue = GameSystem.Item.Count;
-        _panel.SetActive(false);
+        _pausePanel.SetActive(false);
+        _crearPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,12 +27,31 @@ public class UIManager : MonoBehaviour
         _slider.value = _slider.maxValue - GameSystem.Item.Count;
         if (GameSystem.Runner.OnGoal)
         {
-            _panel.SetActive(true);
+            _crearPanel.SetActive(true);
         }
+    }
+
+    public void OnPause()
+    {
+        Time.timeScale = 0f;
+        _pausePanel.SetActive(true);
+    }
+
+    public void OnRestart()
+    {
+        Time.timeScale = 1f;
+        _pausePanel.SetActive(false);
     }
 
     public void OnReroad()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BackTitle()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(_title);
     }
 }
