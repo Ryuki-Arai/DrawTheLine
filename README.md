@@ -48,7 +48,8 @@ __ちょっと ~~ムカついた~~ 使いにくいと思ったところ__
 * ゲーム開始と同時にキャラクターに合わせて画面がスクロールする 
 * キャラクターは地面や描かれた線の上を走ることが出来る 
 * ゲーム画面に点在するコイン(アイテム)を集めていく 
-<img width="600" alt="GameScreenMovie2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220708-230213_DrawTheLine.gif">  
+* 強化アイテムを取るとキャラクターが強化される 
+<img width="600" alt="GameScreenMovie2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220716-180716_DrawTheLine.gif">  
 
 
 ### ゲーム全体の流れ  
@@ -111,3 +112,8 @@ __制作における課題__
   * クリアとは別の何か(ハイスコアとかレアアイテムとか)
 * **現状のデザインを残すならポイント形式をとる**
   * 昨今のハイカジュによくある形式
+* **マップの生成問題**
+  * 大量のマップを扱うならば、アイテムの生成方法を考える必要がある。
+  * 適当な数のアイテムの配置パターンを作成して、複数のスポーン地点にランダムに出す。
+  * ステージごとの難易度をどうするか問題 → とりあえず1(低難易度)と100(高難易度)を作る
+    * これらの問題を全て押さえたマップ管理(スポナー)を作る
