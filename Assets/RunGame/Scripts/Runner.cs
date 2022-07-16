@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Runner : MonoBehaviour
 {
-    [SerializeField] float _speed;
+    [SerializeField] float speed;
+    float _speed;
     Rigidbody2D _rb2d;
     bool _isGoal;
     public bool OnGoal => _isGoal;
@@ -17,6 +18,7 @@ public class Runner : MonoBehaviour
     {
         _isGoal = false;
         _rb2d = GetComponent<Rigidbody2D>();
+        _speed = speed;
     }
 
     void Update()
@@ -25,6 +27,15 @@ public class Runner : MonoBehaviour
         velocity = velocity.normalized * _speed;
         velocity.y = _rb2d.velocity.y;
         _rb2d.velocity = velocity;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            _speed = speed / 2;
+        }
+        else _speed = speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

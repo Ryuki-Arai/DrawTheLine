@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
     private void Awake()
     {
@@ -9,6 +9,9 @@ public class Item : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameSystem.Instance.DeleteItem(this);
+        Action();
         Destroy(this.gameObject);
     }
+
+    public abstract void Action();
 }
