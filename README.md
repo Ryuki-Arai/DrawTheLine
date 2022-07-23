@@ -49,7 +49,7 @@ __ちょっと ~~ムカついた~~ 使いにくいと思ったところ__
 * キャラクターは地面や描かれた線の上を走ることが出来る 
 * ゲーム画面に点在するコイン(アイテム)を集めていく 
 * 強化アイテムを取るとキャラクターが強化される 
-<img width="600" alt="GameScreenMovie2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220723-161909_DrawTheLine">  
+<img width="600" alt="GameScreenMovie2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220723-161909_DrawTheLine.gif">  
 
 
 ### ゲーム全体の流れ  
