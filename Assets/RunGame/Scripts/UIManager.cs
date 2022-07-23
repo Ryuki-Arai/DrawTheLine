@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] Slider _slider;
-
+    [SerializeField] Transform _goal;
     [SerializeField] GameObject _pausePanel;
     [SerializeField] GameObject _crearPanel;
 
@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _slider.GetComponent<Slider>();
-        _slider.maxValue = GameSystem.Item.Count;
+        _slider.maxValue = Vector2.Distance(GameSystem.Runner.transform.position,_goal.position);
         _pausePanel.SetActive(false);
         _crearPanel.SetActive(false);
     }
@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _slider.value = _slider.maxValue - GameSystem.Item.Count;
+        _slider.value = _slider.maxValue - Vector2.Distance(GameSystem.Runner.transform.position, _goal.position);
         if (GameSystem.Runner.OnGoal)
         {
             _crearPanel.SetActive(true);
