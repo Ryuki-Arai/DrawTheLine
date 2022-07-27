@@ -33,7 +33,7 @@ public class Runner : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            _speed = speed / 2;
+            _speed = speed / 3;
         }
         else _speed = speed;
     }

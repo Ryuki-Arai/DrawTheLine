@@ -6,7 +6,7 @@ public class ItemSpawner : MonoBehaviour
 {
 
     [SerializeField] GameObject powerUPItem;
-    [SerializeField] GameObject coinsPrefab;
+    [SerializeField] GameObject[] coinsPrefab;
 
     void Start()
     {
