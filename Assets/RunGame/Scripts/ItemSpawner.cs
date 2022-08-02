@@ -7,13 +7,9 @@ public class ItemSpawner : MonoBehaviour
 
     [SerializeField] GameObject powerUPItem;
     [SerializeField] GameObject[] coinsPrefab;
+    [SerializeField] Transform[] spawnPoint;
 
     void Start()
-    {
-        
-    }
-
-    void Update()
     {
         
     }
