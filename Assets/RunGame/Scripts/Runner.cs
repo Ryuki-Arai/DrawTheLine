@@ -43,6 +43,7 @@ public class Runner : MonoBehaviour
         if(collision.tag == "Finish")
         {
             _isGoal = true;
+            GameSystem.Instance.LevelUP();
         }
     }
 }

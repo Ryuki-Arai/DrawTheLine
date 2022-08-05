@@ -16,4 +16,8 @@ public class GameSystem
     static public List<Item> Item => _instance._item;
     public void SetItem(Item item) { _item.Add(item); }
     public void DeleteItem(Item item) { _item.Remove(item); }
+
+    int _level = 1;
+    static public int Level => _instance._level;
+    public void LevelUP() { _level++; }
 }
