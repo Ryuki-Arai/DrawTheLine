@@ -1,5 +1,8 @@
 using UnityEngine;
-
+/// <summary>
+/// フィールド状に配置されるアイテムの親クラス
+/// 継承してAction関数に必要な処理を書く
+/// </summary>
 public abstract class Item : MonoBehaviour
 {
     private void Awake()
@@ -12,6 +15,8 @@ public abstract class Item : MonoBehaviour
         Action();
         Destroy(this.gameObject);
     }
-
+    /// <summary>
+    /// 取得時の処理
+    /// </summary>
     public abstract void Action();
 }

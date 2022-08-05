@@ -20,7 +20,9 @@ public class Line : MonoBehaviour
         _ec2d.SetPoints(edgeVec);
     }
 
-    
+    /// <summary>
+    /// 指定経過時間後に、線の開始点から消していく
+    /// </summary>
     void Update()
     {
         if(pointTime.Count < 1) return;
@@ -40,6 +42,11 @@ public class Line : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 受け取った座標情報を線座標リストに格納し、LineRenderer とEdgeCollider2Dにセットする
+    /// </summary>
+    /// <param name="Point">タッチされた画面上の座標</param>
+    /// <param name="_pointTime">線の描画開始時間(始点)から、その点が描画されるまでの経過時間</param>
     public void AddPoints(Vector3 Point ,float _pointTime)
     {
         if (lineVec.Count > 0 && Point == lineVec[lineVec.Count - 1]) return;
@@ -50,7 +57,9 @@ public class Line : MonoBehaviour
         _ec2d.SetPoints(edgeVec);
         pointTime.Add(_pointTime);
     }
-
+    /// <summary>
+    /// 線の座標数が1以下になったら消える
+    /// </summary>
     void Destroy()
     {
         if (_lr.positionCount <= 1)

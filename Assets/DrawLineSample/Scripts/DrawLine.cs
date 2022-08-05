@@ -1,5 +1,9 @@
 using UnityEngine;
-
+/// <summary>
+/// 線を引くためのスクリプト
+/// マウスやタッチの判定(シングルタッチ)を用いて線を描画する
+/// シーン上のゲームオブジェクトにアタッチして使用する
+/// </summary>
 public class DrawLine : MonoBehaviour
 {
     [SerializeField] GameObject lineObject;
