@@ -91,9 +91,20 @@ _ライン_
 * 書かれたラインは指定秒後に書いた始点から消えていくようにする。
 <img width="600" alt="GameScreenMovie1" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220702-131347_DrawTheLine.gif">
 
+## 縦画面モードを作れるか？
+**イケた  思ってたよりいい動きした**  
+横画面より縦画面の方がハイカジュっぽく見えるのは気のせいだろうか
+アイテムの配置諸々は横画面のを無理矢理縦にしたから、これでやるなら追々調整が必要。
+*こんな感じ*  
+<img height="600" alt="GameScreenMovie1" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220812-103919_DrawTheLine.gif">
+* 個人的には面白くなりそうだと思った
+* ただ、ゲームとするにはまだ課題が多いかも
+  * アイテムが一色単なので、もう少し増やすとか
+  * [Voodooの「Color Road!」](https://play.google.com/store/search?q=Color%20Road%EF%BC%81&c=apps&hl=ja)  みたいなゲームをイメージすれば面白くなりそう
+* このゲームを面白くする要として、__”線を引く”という要素をどう出すか__　という大きな課題が見えた。(横画面の時から意識していたが、改めて実感した)
 
 __制作における課題__
-* 線を引くと何が面白くなるのか？
+* **線を引くと何が面白くなるのか？**
   * アイテムを取るたびにプレイヤーが増える → ワタワタ感
   * 障害物をよける線引き → やってはいけないことを避ける
   * ゴールを目指す目標におけるリスクリターン
