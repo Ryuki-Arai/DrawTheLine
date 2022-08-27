@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// ‰¡ˆÚ“®‚©cˆÚ“®‚©Œˆ‚ß‚é
+/// </summary>
 public enum Track
 {
     Holizontal,
@@ -37,6 +39,10 @@ public class Runner : MonoBehaviour
         _rb2d.velocity = velocity;
     }
 
+    /// <summary>
+    /// ‰¡ˆÚ“®‚É‰EŒü‚«‚Éi‚ß‚éˆ—
+    /// </summary>
+    /// <returns></returns>
     private Vector3 GoHolizontal()
     {
         var velocity = this.transform.right;
@@ -45,6 +51,10 @@ public class Runner : MonoBehaviour
         return velocity;
     }
 
+    /// <summary>
+    /// cˆÚ“®‚ÉãŒü‚«‚Éi‚ß‚éˆ—
+    /// </summary>
+    /// <returns></returns>
     private Vector3 GoVertual()
     {
         var velocity = this.transform.up;

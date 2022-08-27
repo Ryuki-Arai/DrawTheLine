@@ -7,9 +7,14 @@ public class ItemSpawner : MonoBehaviour
 
     [SerializeField] GameObject powerUPItem;
     [SerializeField] GameObject[] coinsPrefab;
-    [SerializeField] Transform[] spawnPoint;
+    [SerializeField] SpawnPos[] spawnPoint;
     [SerializeField] int _level;
     Transform[] point;
+    [System.Serializable]
+    public class SpawnPos
+    {
+        public Transform[] spawnPos;
+    }
 
     void Start()
     {
@@ -18,9 +23,12 @@ public class ItemSpawner : MonoBehaviour
             _level = GameSystem.Level;
             Debug.Log($"{_level} : { GameSystem.Level}");
             point = new Transform[10 + _level / 2];
-            for (int i = 0; i < point.Length; i++)
+            for (int i = 0; i < spawnPoint.Length; i++)
             {
-                point[i] = spawnPoint[Random.Range(0, spawnPoint.Length)];
+                for(int j = 0; j < point.Length/spawnPoint.Length; j++)
+                {
+                    point[i] = spawnPoint[i].spawnPos[Random.Range(0, spawnPoint.Length)];
+                }
             }
             for (int i = 0; i < point.Length; i++)
             {

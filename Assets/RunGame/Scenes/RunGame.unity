@@ -6133,7 +6133,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1105425, y: 1}
+    m_SensorSize: {x: 2.111001, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6309,66 +6309,7 @@ MonoBehaviour:
   - {fileID: 17393642170314600, guid: 16903debb1d43fa4197aaf7b4ad11550, type: 3}
   - {fileID: 17393642170314600, guid: d26f86731768a324ca0060613f3601eb, type: 3}
   spawnPoint:
-  - {fileID: 793421844}
-  - {fileID: 2048383791}
-  - {fileID: 1727089944}
-  - {fileID: 1448002316}
-  - {fileID: 342371340}
-  - {fileID: 1849579656}
-  - {fileID: 525724495}
-  - {fileID: 61352325}
-  - {fileID: 2130752911}
-  - {fileID: 579494410}
-  - {fileID: 1392104205}
-  - {fileID: 824819646}
-  - {fileID: 1292034230}
-  - {fileID: 610829022}
-  - {fileID: 1294047372}
-  - {fileID: 1114599835}
-  - {fileID: 380630417}
-  - {fileID: 478063570}
-  - {fileID: 969330925}
-  - {fileID: 1673984590}
-  - {fileID: 1693308633}
-  - {fileID: 387334501}
-  - {fileID: 16466998}
-  - {fileID: 1657584661}
-  - {fileID: 1193706948}
-  - {fileID: 742881202}
-  - {fileID: 958097882}
-  - {fileID: 1232963166}
-  - {fileID: 1504069000}
-  - {fileID: 2030934156}
-  - {fileID: 1976608988}
-  - {fileID: 328235902}
-  - {fileID: 599812453}
-  - {fileID: 1718437766}
-  - {fileID: 425717540}
-  - {fileID: 907071000}
-  - {fileID: 440134263}
-  - {fileID: 238956156}
-  - {fileID: 1167941538}
-  - {fileID: 805539975}
-  - {fileID: 1026897039}
-  - {fileID: 1978122729}
-  - {fileID: 691771926}
-  - {fileID: 2029955255}
-  - {fileID: 1968683452}
-  - {fileID: 2071260821}
-  - {fileID: 353927574}
-  - {fileID: 1333283725}
-  - {fileID: 201348533}
-  - {fileID: 238815182}
-  - {fileID: 1311932688}
-  - {fileID: 328235902}
-  - {fileID: 488363021}
-  - {fileID: 17851844}
-  - {fileID: 1132493270}
-  - {fileID: 94030861}
-  - {fileID: 333573852}
-  - {fileID: 1482901025}
-  - {fileID: 1104212356}
-  - {fileID: 629566839}
+  - spawnPos: []
   _level: 0
 --- !u!4 &1441858756
 Transform:
@@ -6554,7 +6495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460712731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.447259, y: -0.000026226044, z: -10}
+  m_LocalPosition: {x: -2.4449625, y: -0.000026226044, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
