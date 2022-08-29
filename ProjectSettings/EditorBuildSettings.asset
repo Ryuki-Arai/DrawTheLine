@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/RunGame/Scenes/RunGame.unity
     guid: 3b12e2d3d02c004469caab2cdaf012b7
   - enabled: 1
-    path: Assets/RunGame_Vertual]/RunGame 1.unity
-    guid: 82848c8af8d039949929277e98db2186
+    path: Assets/RunGame2/Scenes/RunGame2.unity
+    guid: 91bc37b7145ffc44093ede38e5dfa9c3
   m_configObjects: {}

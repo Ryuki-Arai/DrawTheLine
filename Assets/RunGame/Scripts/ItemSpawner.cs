@@ -5,10 +5,10 @@ using UnityEngine;
 public class ItemSpawner : MonoBehaviour
 {
 
+    [SerializeField] int _level;
     [SerializeField] GameObject powerUPItem;
     [SerializeField] GameObject[] coinsPrefab;
     [SerializeField] SpawnPos[] spawnPoint;
-    [SerializeField] int _level;
     Transform[] point;
     [System.Serializable]
     public class SpawnPos
@@ -22,12 +22,12 @@ public class ItemSpawner : MonoBehaviour
         {
             _level = GameSystem.Level;
             Debug.Log($"{_level} : { GameSystem.Level}");
-            point = new Transform[10 + _level / 2];
+            point = new Transform[spawnPoint.Length * spawnPoint[0].spawnPos.Length];
             for (int i = 0; i < spawnPoint.Length; i++)
             {
                 for(int j = 0; j < point.Length/spawnPoint.Length; j++)
                 {
-                    point[i] = spawnPoint[i].spawnPos[Random.Range(0, spawnPoint.Length)];
+                    point[i] = spawnPoint[i].spawnPos[Random.Range(0, spawnPoint[i].spawnPos.Length)];
                 }
             }
             for (int i = 0; i < point.Length; i++)
