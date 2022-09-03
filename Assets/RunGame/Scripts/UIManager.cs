@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _slider.GetComponent<Slider>();
-        _slider.maxValue = Vector2.Distance(GameSystem.Runner.transform.position,_goal.position);
+        _slider.maxValue = Vector2.Distance(GameSystem.Runner[0].transform.position,_goal.position);
         _pausePanel.SetActive(false);
         _crearPanel.SetActive(false);
     }
@@ -24,11 +24,20 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _slider.value = _slider.maxValue - Vector2.Distance(GameSystem.Runner.transform.position, _goal.position);
-        if (GameSystem.Runner.OnGoal)
+        if(GameSystem.Runner.Count > 0)_slider.value = _slider.maxValue - Vector2.Distance(GameSystem.Runner[0].transform.position, _goal.position);
+        _crearPanel.SetActive(GoalCheck());
+    }
+
+    bool GoalCheck()
+    {
+        foreach(var go in GameSystem.Runner)
         {
-            _crearPanel.SetActive(true);
+            if (!go.OnGoal)
+            {
+                return false;
+            }
         }
+        return true;
     }
 
     public void OnPause()
@@ -46,12 +55,15 @@ public class UIManager : MonoBehaviour
     public void OnReroad()
     {
         Time.timeScale = 1f;
+        GameSystem.Instance.RemoveData();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void BackTitle()
     {
         Time.timeScale = 1f;
+        if (GameSystem.Runner.Count <= 0) GameSystem.Instance.LevelUP();
+        GameSystem.Instance.RemoveData();
         SceneManager.LoadScene(_title);
     }
 }

@@ -12,11 +12,11 @@ public abstract class Item : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameSystem.Instance.DeleteItem(this);
-        Action();
+        Action(collision.gameObject);
         Destroy(this.gameObject);
     }
     /// <summary>
     /// æ“¾‚Ìˆ—
     /// </summary>
-    public abstract void Action();
+    public abstract void Action(GameObject obj);
 }
