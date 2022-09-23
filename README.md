@@ -106,6 +106,8 @@ _ライン_
 ## 新たな遊びの検証2 ランナーの数を増やすパターン  
 **時々考えてた最近のハイカジュに多い形態を検証する**  
 動機として、線を引くことに重要度を持たせるにはやはり数なのでは...と思った。  
+**サンプル**  
+<img width="600" alt="GameScreenMovie2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220923_125614_DrawTheLine.gif">  
 **課題**  
 * 最初のランナーの数をどうするか
   * ランナー同士の当たり判定もつけるか否か
