@@ -9,6 +9,7 @@ public class PowerUP : Item
     [SerializeField] TextMeshPro text;
     private void Start()
     {
+        text.GetComponent<TextMeshPro>();
         text.text = count.ToString();
     }
     public override void Action(GameObject obj)
