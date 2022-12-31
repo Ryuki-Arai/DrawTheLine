@@ -1,49 +1,10 @@
-# DrawTheLine  
-## 概要  
-* マウスや画面のタッチ判定を用いて画面上に線を引くやつ
+# 線を引く機能を用いたカジュアルゲームの開発  
 
-## 開発環境  
+## 開発環境
 * Unity2021.3.4f1  
 * Microsoft Visual Stdio 2022  
 
-## 開発方法
-
-__線の引き方__
-* LineRendererを使った
-  * マウスの判定を取り、生成したオブジェクトにタッチで撮った座標を反映させる
-  * 生成時にLineRendererコンポーネントのpositions項目に対する生成時からの経過時間を記録する事で、一定時間後に視点から消えていく様にする
-
-__当たり判定__
-* EdgeCollider2Dを使った
-  * 線の生成と同時にEdgeCollider2DコンポーネントのPoints項目にも座標を反映させる
-
-_遭遇した問題点_
-* 描いた線を始点から消せない問題
-  * LineRendererはVector3型配列、EdgeCollider2DはVector2型Listであるため、相互の同期した管理や、LineRendererのPosition配列を先頭から消す方法に苦戦した  
-**解決方法 : 線のPoint座標をListとして保持し、精製や抹消をList上で管理、各種項目に反映させることで解決**
-
-* EdgeCollider2Dコンポーネントを使用する際、使用ユーザーのレポートサイトが極端に少なく、些細な不具合の修正に時間を取った
-  * 本当に[Unityマニュアル](https://docs.unity3d.com/ja/2019.4/Manual/class-EdgeCollider2D.html)くらいしか引っ掛からない
-  * **以下に使用したEdgeCollider2Dの項目をまとめておく**
-
-### EdgeCollider2D まとめ
-
-[EdgeCollider2D概要(本当はこういう使い方らしい)](https://miyagame.net/edgecollider2d/)  
-**※EdgeCollider2D同士では衝突判定を取らないので注意**
-
-__本プロジェクトで使用した項目__
-1. `float EdgeCollider2D.edgeRadius{get; set;}` : 本コライダーは円形に取られる。そのコライダーの半径を指定する。
-2. `bool EdgeCollider2D.SetPoints(List<Vector2> points)` : 当たり判定の頂点座標をまとめて指定する。
-
-__ちょっと ~~ムカついた~~ 使いにくいと思ったところ__
-1. 必ずSetPoints関数を呼ばないとColliderが新しく反映されない : 頂点座標(Point)の要素数を更新(減)しても最後にSetPointが呼ばれた状態でモノ言わない。LineRendererでは要素の後ろから消えたのに。
-  * 曰く、EdgeCollider2Dはアクセスを受けるたびにその配列が更新される仕組みらしい。
-
----
-
-## タッチカービィ的なカジュアルゲームの開発  
-
-### ゲーム概要  
+## ゲーム概要  
 * 横スクロール型アクションゲーム  
 * ゲーム開始と同時にキャラクターに合わせて画面がスクロールする 
 * キャラクターは地面や描かれた線の上を走ることが出来る 
@@ -51,8 +12,7 @@ __ちょっと ~~ムカついた~~ 使いにくいと思ったところ__
 * 強化アイテムを取るとキャラクターが強化される 
 <img width="600" alt="GameScreenMovie2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220723-161909_DrawTheLine.gif">  
 
-
-### ゲーム全体の流れ  
+## ゲーム全体の流れ  
 __シーン__  
 _●タイトルシーン_  
 * ゲーム開始ボタン  
@@ -71,7 +31,7 @@ _●ゲームシーン_
   * 終了ボタン
     →タイトルへ
 
-### 必要な実装  
+## 必要な実装  
 _キャラクター_  
 * ゲームの開始と同時に自動で右に進み続ける  
 * 地面や線の上を走り、コインやスターを集める。  
