@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,6 +41,22 @@ public class Line : MonoBehaviour
         {
             _time += Time.deltaTime;
         }
+    }
+
+    private IEnumerator DeletePoint()
+    {
+        while(pointTime.Count > 1)
+        {
+            yield return new WaitForSeconds(_deleteTime + pointTime[0]);
+
+            lineVec.RemoveAt(0);
+            _lr.positionCount = lineVec.Count;
+            edgeVec.RemoveAt(0);
+            _lr.SetPositions(lineVec.ToArray());
+            _ec2d.SetPoints(edgeVec);
+            pointTime.RemoveAt(0);
+        }
+        Destroy(gameObject);
     }
 
     /// <summary>
