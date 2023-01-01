@@ -19,43 +19,36 @@ public class Line : MonoBehaviour
         _lr.SetPositions(lineVec.ToArray());
         _ec2d = GetComponent<EdgeCollider2D>();
         _ec2d.SetPoints(edgeVec);
+        StartCoroutine(DeletePoint());
     }
 
     /// <summary>
     /// 指定経過時間後に、線の開始点から消していく
     /// </summary>
-    void Update()
-    {
-        if(pointTime.Count < 1) return;
-        if(_time >= _deleteTime + pointTime[0])
-        {
-            lineVec.RemoveAt(0);
-            _lr.positionCount = lineVec.Count;
-            edgeVec.RemoveAt(0);
-            _lr.SetPositions(lineVec.ToArray());
-            _ec2d.SetPoints(edgeVec);
-            pointTime.RemoveAt(0);
-            Destroy();
-        }
-        else
-        {
-            _time += Time.deltaTime;
-        }
-    }
-
     private IEnumerator DeletePoint()
     {
-        while(pointTime.Count > 1)
-        {
-            yield return new WaitForSeconds(_deleteTime + pointTime[0]);
+        yield return new WaitForSeconds(_deleteTime);
 
-            lineVec.RemoveAt(0);
-            _lr.positionCount = lineVec.Count;
-            edgeVec.RemoveAt(0);
-            _lr.SetPositions(lineVec.ToArray());
-            _ec2d.SetPoints(edgeVec);
-            pointTime.RemoveAt(0);
+        float t = 0f;
+
+        while (pointTime.Count > 1)
+        {
+            yield return new WaitForEndOfFrame();
+
+            t+=Time.deltaTime;
+
+            if(t >= pointTime[0])
+            {
+                lineVec.RemoveAt(0);
+                _lr.positionCount = lineVec.Count;
+                edgeVec.RemoveAt(0);
+                _lr.SetPositions(lineVec.ToArray());
+                _ec2d.SetPoints(edgeVec);
+                pointTime.RemoveAt(0);
+            }
+
         }
+
         Destroy(gameObject);
     }
 
