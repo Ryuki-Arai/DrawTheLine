@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Line : MonoBehaviour
 {
-    [SerializeField] float _deleteTime;
+    [SerializeField, Tooltip("‘‚¢‚½ü‚ðŽ©“®“I‚ÉÁ‹Ž‚·‚é‚©")] 
+    bool _deleteLine;
+    public bool DeleteLine => _deleteLine;
+    [HideInInspector,Min(0.1f)] 
+    public float DeleteTime;
     LineRenderer _lr;
     EdgeCollider2D _ec2d;
-    float _time;
     List<Vector3> lineVec = new List<Vector3>();
     List<Vector2> edgeVec = new List<Vector2>();
     List<float> pointTime = new List<float>();
@@ -19,7 +22,7 @@ public class Line : MonoBehaviour
         _lr.SetPositions(lineVec.ToArray());
         _ec2d = GetComponent<EdgeCollider2D>();
         _ec2d.SetPoints(edgeVec);
-        StartCoroutine(DeletePoint());
+        if(_deleteLine)StartCoroutine(DeletePoint());
     }
 
     /// <summary>
@@ -27,7 +30,7 @@ public class Line : MonoBehaviour
     /// </summary>
     private IEnumerator DeletePoint()
     {
-        yield return new WaitForSeconds(_deleteTime);
+        yield return new WaitForSeconds(DeleteTime);
 
         float t = 0f;
 

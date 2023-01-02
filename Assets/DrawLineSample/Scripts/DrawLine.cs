@@ -25,7 +25,8 @@ public class DrawLine : MonoBehaviour
             _pointTime += Time.deltaTime;
             var point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             point.z = 0f;
-            _line.AddPoints(point,_pointTime);
+            if (_line) _line.AddPoints(point, _pointTime);
+            else CreateLine();
         }
         else if (Input.GetMouseButtonUp(0))
         {
