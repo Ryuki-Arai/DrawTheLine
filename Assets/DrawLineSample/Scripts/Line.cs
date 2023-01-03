@@ -7,7 +7,7 @@ public class Line : MonoBehaviour
     [SerializeField, Tooltip("‘‚¢‚½ü‚ğ©“®“I‚ÉÁ‹‚·‚é‚©")] 
     bool _deleteLine;
     public bool DeleteLine => _deleteLine;
-    [HideInInspector,Min(0.1f)] 
+    [HideInInspector] //ü‚ğˆø‚¢‚Ä‚©‚çÁ–Å‚·‚é‚Ü‚Å‚ÌŠÔ
     public float DeleteTime;
     LineRenderer _lr;
     EdgeCollider2D _ec2d;
