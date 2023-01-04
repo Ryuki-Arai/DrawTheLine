@@ -6,9 +6,18 @@ using UnityEngine;
 /// </summary>
 public class DrawLine : MonoBehaviour
 {
-    [SerializeField] GameObject lineObject;
-    [SerializeField] float lineWidth = 0.5f;
-    [SerializeField] Material[] marerials;
+    [SerializeField,Tooltip("線のプレハブ")] 
+    GameObject lineObject;
+    [SerializeField, Tooltip("線の色のマテリアル")] 
+    Material[] marerials;
+    [SerializeField, Tooltip("線の太さ"),Min(0.05f)] 
+    float lineWidth = 0.5f;
+    bool _useCollider;
+    [SerializeField, Tooltip("書いた線を自動的に消去するか")]
+    bool _deleteLine;
+    public bool DeleteLine => _deleteLine;
+    [HideInInspector] public float DeleteTime;
+    
     int _mIndex = 0;
     Line _line;
     float _pointTime;
@@ -41,6 +50,8 @@ public class DrawLine : MonoBehaviour
     {
         var obj = Instantiate(lineObject, transform);
         _line = obj.GetComponent<Line>();
+        _line.DeleteTime = DeleteTime;
+        _line.DeleteLine = _deleteLine;
         var _lr = obj.GetComponent<LineRenderer>();
         _lr.startWidth = lineWidth;
         _lr.material = marerials[_mIndex % marerials.Length];

@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Line))]
+[CustomEditor(typeof(DrawLine))]
 public class FealdEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
 
-        Line instance = target as Line;
+        DrawLine instance = target as DrawLine;
 
         if (instance.DeleteLine)
         {

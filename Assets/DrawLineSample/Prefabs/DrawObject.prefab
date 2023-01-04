@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineObject: {fileID: 1171629624375379934, guid: a39f40a9cbb905e459fdbad66c33614a, type: 3}
-  lineWidth: 0.1
   marerials:
   - {fileID: 2100000, guid: 402c7f628fc17a84f8b176f06874e5e5, type: 2}
   - {fileID: 2100000, guid: 634b7bd0e5e033648b7ba8ac14569706, type: 2}
   - {fileID: 2100000, guid: 10a38f60a2474a64d9256be7a26a4c3c, type: 2}
+  lineWidth: 0.1
+  _deleteLine: 1
+  DeleteTime: 5

@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6997185013628815942, guid: 98e965b4bc460de4eb49b064325a6957, type: 3}
+      propertyPath: _deleteLine
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6997185013628815943, guid: 98e965b4bc460de4eb49b064325a6957, type: 3}
       propertyPath: m_Name
       value: DrawObject
