@@ -8,15 +8,23 @@ public class DrawLine : MonoBehaviour
 {
     [SerializeField,Tooltip("線のプレハブ")] 
     GameObject lineObject;
+
     [SerializeField, Tooltip("線の色のマテリアル")] 
     Material[] marerials;
+    
     [SerializeField, Tooltip("線の太さ"),Min(0.05f)] 
     float lineWidth = 0.5f;
+    
+    [SerializeField, Tooltip("当たり判定")]
     bool _useCollider;
+    
     [SerializeField, Tooltip("書いた線を自動的に消去するか")]
     bool _deleteLine;
+    
     public bool DeleteLine => _deleteLine;
-    [HideInInspector] public float DeleteTime;
+    
+    [HideInInspector] //線を引いてから消滅するまでの時間
+    public float DeleteTime;
     
     int _mIndex = 0;
     Line _line;
@@ -56,6 +64,7 @@ public class DrawLine : MonoBehaviour
         _lr.startWidth = lineWidth;
         _lr.material = marerials[_mIndex % marerials.Length];
         var _ec2d = obj.GetComponent<EdgeCollider2D>();
+        _ec2d.enabled = _useCollider;
         _ec2d.edgeRadius = lineWidth / 2;
     }
 }
