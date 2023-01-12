@@ -49,6 +49,7 @@ _ライン_
 * プレイヤーを誘導するための線。  
 * 当たり判定を付ける。  
 * 書かれたラインは指定秒後に書いた始点から消えていくようにする。
+* **作成した機能は [こちら](https://github.com/Ryuki-Arai/DrawTheLine/wiki)  を参照。**
 <img width="600" alt="GameScreenMovie1" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220702-131347_DrawTheLine.gif">
 
 ## 遊びの検証1 縦画面モードを作れるか？
