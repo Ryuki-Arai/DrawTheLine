@@ -7,6 +7,7 @@ public class PowerUP : Item
 {
     [SerializeField] int count;
     [SerializeField] TextMeshPro text;
+    [SerializeField] GameObject spawnPoint;
     private void Start()
     {
         text.GetComponent<TextMeshPro>();
@@ -14,6 +15,6 @@ public class PowerUP : Item
     }
     public override void Action(GameObject obj)
     {
-        GameObject.Find("RunnerSpawn").GetComponent<RunnerSpawn>().Spawn(this.transform,count);
+        spawnPoint.GetComponent<RunnerSpawn>().Spawn(count);
     }
 }

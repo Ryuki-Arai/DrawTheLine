@@ -10,14 +10,14 @@ public class RunnerSpawn : MonoBehaviour
 
     void Start()
     {
-        Spawn(spawnPos, spawnCount);
+        Spawn(spawnCount);
     }
 
-    public void Spawn(Transform pos, int count)
+    public void Spawn(int count)
     {
         for (int i = 0; i < count; i++)
         {
-            Instantiate(runner, pos.position, Quaternion.identity);
+            Instantiate(runner, spawnPos.position, Quaternion.identity);
         }
     }
 }

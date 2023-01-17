@@ -35,7 +35,7 @@ public class Line : MonoBehaviour
 
         while (pointTime.Count > 1)
         {
-            yield return new WaitForEndOfFrame();
+            yield return null;
 
             t+=Time.deltaTime;
 
@@ -68,15 +68,5 @@ public class Line : MonoBehaviour
         _lr.SetPositions(lineVec.ToArray());
         _ec2d.SetPoints(edgeVec);
         pointTime.Add(_pointTime);
-    }
-    /// <summary>
-    /// ü‚ÌÀ•W”‚ª1ˆÈ‰º‚É‚È‚Á‚½‚çÁ‚¦‚é
-    /// </summary>
-    void Destroy()
-    {
-        if (_lr.positionCount <= 1)
-        {
-            Destroy(gameObject);
-        }
     }
 }

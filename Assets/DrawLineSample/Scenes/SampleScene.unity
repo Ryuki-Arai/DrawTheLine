@@ -134,6 +134,26 @@ PrefabInstance:
       propertyPath: _deleteLine
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6997185013628815942, guid: 98e965b4bc460de4eb49b064325a6957, type: 3}
+      propertyPath: _useCollider
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997185013628815942, guid: 98e965b4bc460de4eb49b064325a6957, type: 3}
+      propertyPath: marerials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997185013628815942, guid: 98e965b4bc460de4eb49b064325a6957, type: 3}
+      propertyPath: marerials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 402c7f628fc17a84f8b176f06874e5e5, type: 2}
+    - target: {fileID: 6997185013628815942, guid: 98e965b4bc460de4eb49b064325a6957, type: 3}
+      propertyPath: marerials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 634b7bd0e5e033648b7ba8ac14569706, type: 2}
+    - target: {fileID: 6997185013628815942, guid: 98e965b4bc460de4eb49b064325a6957, type: 3}
+      propertyPath: marerials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 10a38f60a2474a64d9256be7a26a4c3c, type: 2}
     - target: {fileID: 6997185013628815943, guid: 98e965b4bc460de4eb49b064325a6957, type: 3}
       propertyPath: m_Name
       value: DrawObject

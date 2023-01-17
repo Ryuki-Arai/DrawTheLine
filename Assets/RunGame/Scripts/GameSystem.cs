@@ -18,6 +18,13 @@ public class GameSystem
     public void SetItem(Item item) { _item.Add(item); }
     public void DeleteItem(Item item) { _item.Remove(item); }
 
+    int _point;
+    public int Point
+    {
+        get => _point;
+        set => _point = value;
+    }
+
     public void RemoveData()
     {
         Runner.Clear();

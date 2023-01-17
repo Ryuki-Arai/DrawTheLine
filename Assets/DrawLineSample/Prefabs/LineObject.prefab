@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6299142703985224196}
   - component: {fileID: 5214063628164791068}
   - component: {fileID: 6420575688887233210}
+  - component: {fileID: -4882866854725610526}
   m_Layer: 0
   m_Name: LineObject
   m_TagString: Untagged
@@ -46,8 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f82a7850d4a1349ba186a0dec95409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deleteLine: 1
-  DeleteTime: 5
 --- !u!120 &5214063628164791068
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -144,7 +143,7 @@ LineRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
 --- !u!68 &6420575688887233210
 EdgeCollider2D:
@@ -168,3 +167,24 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!50 &-4882866854725610526
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171629624375379934}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
