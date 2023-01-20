@@ -9,8 +9,8 @@
 * ゲーム開始と同時にキャラクターに合わせて画面がスクロールする 
 * キャラクターは地面や描かれた線の上を走ることが出来る 
 * ゲーム画面に点在するコイン(アイテム)を集めていく 
-* 強化アイテムを取るとキャラクターが強化される 
-<img width="600" alt="GameScreenMovie2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220723-161909_DrawTheLine.gif">  
+* 強化アイテムを取るとキャラクターが増殖する  
+<img width="600" alt="GameScreenMovie2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220923_125614_DrawTheLine.gif">  
 
 ## ゲーム全体の流れ  
 __シーン__  
@@ -39,7 +39,7 @@ _キャラクター_
 
 _アイテム_
 * ゲームシーン上に適当に配置される。
-* キャラクターに成長をもたらす。
+* キャラクターが増殖する。
 
 _コイン_  
 * ゲームシーン上に適当に配置される。  
@@ -50,28 +50,6 @@ _ライン_
 * 当たり判定を付ける。  
 * 書かれたラインは指定秒後に書いた始点から消えていくようにする。
 * **作成した機能は [こちら](https://github.com/Ryuki-Arai/DrawTheLine/wiki)  を参照。**
-<img width="600" alt="GameScreenMovie1" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220702-131347_DrawTheLine.gif">
-
-## 遊びの検証1 縦画面モードを作れるか？
-**イケた  思ってたよりいい動きした**  
-横画面より縦画面の方がハイカジュっぽく見えるのは気のせいだろうか  
-アイテムの配置諸々は横画面のを無理矢理縦にしたから、これでやるなら追々調整が必要。  
-*こんな感じ*  
-<img height="600" alt="GameScreenMovie1" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220812-103919_DrawTheLine.gif">
-* 個人的には面白くなりそうだと思った
-* ただ、ゲームとするにはまだ課題が多いかも
-  * アイテムが一色単なので、もう少し増やすとか
-  * [Voodooの「Color Road!」](https://play.google.com/store/search?q=Color%20Road%EF%BC%81&c=apps&hl=ja)  みたいなゲームをイメージすれば面白くなりそう
-* このゲームを面白くする要として、__”線を引く”という要素をどう出すか__　という大きな課題が見えた。(横画面の時から意識していたが、改めて実感した)
-
-## 新たな遊びの検証2 ランナーの数を増やすパターン  
-**時々考えてた最近のハイカジュに多い形態を検証する**  
-動機として、線を引くことに重要度を持たせるにはやはり数なのでは...と思った。  
-* 引く線を歪めた時のランナーの波打つ動きや、ランナーの数が増えた時の視覚的効果は面白さに繋がるかも
-* 敢えて取りにくい位置にアイテムを置いて、数を増やすことのメリットに繋げる
-
-**サンプル**  
-<img width="600" alt="GameScreenMovie2" src="https://github.com/Ryuki-Arai/DrawTheLine/blob/main/Picture_README/Screen_Recording_20220923_125614_DrawTheLine.gif">  
 
 **課題**  
 * 最初のランナーの数をどうするか
@@ -94,7 +72,7 @@ _ライン_
 カルガモだと親子似た見た目でわかりにくいからアヒルの方が視覚的にはいいかな？  
 モチーフは鳥類の親子の移動的なヤツにしようと思う
 
-## __制作における課題__
+## __制作における課題(書き溜め)__
 * **線を引くと何が面白くなるのか？**
   * アイテムを取るたびにプレイヤーが増える → ワタワタ感
   * 障害物をよける線引き → やってはいけないことを避ける
