@@ -11,9 +11,19 @@ public enum Track
     Vertual,
 }
 
+/// <summary>
+/// êeéqä÷åWÇÃê›íË 
+/// </summary>
+public enum Node
+{
+    Parent,
+    Child,
+}
+
 public class Runner : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] Node _node;
     [SerializeField] Track _moved;
     float _speed;
     Rigidbody2D _rb2d;
@@ -22,7 +32,8 @@ public class Runner : MonoBehaviour
 
     void Awake()
     {
-        GameSystem.Instance.SetRunner(this);
+        if(_node == Node.Child) GameSystem.Instance.SetChildRunner(this);
+        else GameSystem.Instance.SetRunner(this);
     }
     void Start()
     {
@@ -76,6 +87,14 @@ public class Runner : MonoBehaviour
         if(collision.tag == "Finish")
         {
             _isGoal = true;
+        }
+    }
+
+    public void Spawn(GameObject runner, Transform spawnPos, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(runner, spawnPos.position, Quaternion.identity);
         }
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PowerUP : Item
 {
+    [SerializeField] GameObject childRunner;
+    [SerializeField] Transform spawnPos;
     [SerializeField] int count;
     [SerializeField] TextMeshPro text;
     [SerializeField] GameObject spawnPoint;
@@ -15,6 +17,6 @@ public class PowerUP : Item
     }
     public override void Action(GameObject obj)
     {
-        spawnPoint.GetComponent<RunnerSpawn>().Spawn(count);
+        GameSystem.Runner.Spawn(childRunner, spawnPos, count);
     }
 }

@@ -8,10 +8,14 @@ public class GameSystem
     static public GameSystem Instance => _instance;
     private GameSystem() { }
 
-    List<Runner> _runner = new List<Runner>();
-    static public List<Runner> Runner => _instance._runner;
-    public void SetRunner(Runner r) { _runner.Add(r); }
-    public void DeleteRunnner(Runner r) { _runner.Remove(r); }
+    Runner runner = default;
+    static public Runner Runner => _instance.runner;
+    public void SetRunner(Runner r) { runner = r; }
+
+    List<Runner> _childRunner = new List<Runner>();
+    static public List<Runner> ChildRunner => _instance._childRunner;
+    public void SetChildRunner(Runner r) { _childRunner.Add(r); }
+    public void DeleteChildRunnner(Runner r) { _childRunner.Remove(r); }
 
     List<Item> _item = new List<Item>();
     static public List<Item> Item => _instance._item;
@@ -27,7 +31,7 @@ public class GameSystem
 
     public void RemoveData()
     {
-        Runner.Clear();
+        ChildRunner.Clear();
         _item.Clear();
     }
 

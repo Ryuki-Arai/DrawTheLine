@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _slider.GetComponent<Slider>();
-        _slider.maxValue = Vector2.Distance(GameSystem.Runner[0].transform.position,_goal.position);
+        _slider.maxValue = Vector2.Distance(GameSystem.ChildRunner[0].transform.position,_goal.position);
         _pausePanel.SetActive(false);
         _crearPanel.SetActive(false);
     }
@@ -24,13 +24,13 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameSystem.Runner.Count > 0)_slider.value = _slider.maxValue - Vector2.Distance(GameSystem.Runner[0].transform.position, _goal.position);
+        if(GameSystem.ChildRunner.Count > 0)_slider.value = _slider.maxValue - Vector2.Distance(GameSystem.ChildRunner[0].transform.position, _goal.position);
         _crearPanel.SetActive(GoalCheck());
     }
 
     bool GoalCheck()
     {
-        foreach(var go in GameSystem.Runner)
+        foreach(var go in GameSystem.ChildRunner)
         {
             if (!go.OnGoal)
             {
@@ -62,7 +62,7 @@ public class UIManager : MonoBehaviour
     public void BackTitle()
     {
         Time.timeScale = 1f;
-        if (GameSystem.Runner.Count <= 0) GameSystem.Instance.LevelUP();
+        if (GameSystem.ChildRunner.Count <= 0) GameSystem.Instance.LevelUP();
         GameSystem.Instance.RemoveData();
         SceneManager.LoadScene(_title);
     }

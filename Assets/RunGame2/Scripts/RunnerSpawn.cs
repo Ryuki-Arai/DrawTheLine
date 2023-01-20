@@ -10,14 +10,6 @@ public class RunnerSpawn : MonoBehaviour
 
     void Start()
     {
-        Spawn(spawnCount);
-    }
-
-    public void Spawn(int count)
-    {
-        for (int i = 0; i < count; i++)
-        {
-            Instantiate(runner, spawnPos.position, Quaternion.identity);
-        }
+        GameSystem.Runner.Spawn(runner,spawnPos,spawnCount);
     }
 }
