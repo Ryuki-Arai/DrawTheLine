@@ -2,24 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 横移動か縦移動か決める
-/// </summary>
-public enum Track
-{
-    Holizontal,
-    Vertual,
-}
-
-/// <summary>
-/// 親子関係の設定 
-/// </summary>
-public enum Node
-{
-    Parent,
-    Child,
-}
-
 public class Runner : MonoBehaviour
 {
     [SerializeField] float speed;
@@ -44,10 +26,7 @@ public class Runner : MonoBehaviour
 
     void Update()
     {
-        Vector3 velocity = default;
-        if (_moved == Track.Holizontal) velocity = GoHolizontal();
-        else if (_moved == Track.Vertual) velocity = GoVertual();
-        _rb2d.velocity = velocity;
+        _rb2d.velocity = _moved == Track.Holizontal ? GoHolizontal() : GoVertual();
     }
 
     /// <summary>
@@ -90,11 +69,36 @@ public class Runner : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// オブジェクトを任意の個数出現させる
+    /// </summary>
+    /// <param name="runner">出現させるオブジェクト</param>
+    /// <param name="spawnPos">出現させるポイント</param>
+    /// <param name="count">出現させる数</param>
     public void Spawn(GameObject runner, Transform spawnPos, int count)
     {
         for (int i = 0; i < count; i++)
         {
             Instantiate(runner, spawnPos.position, Quaternion.identity);
         }
+    }
+
+    /// <summary>
+    /// 横移動か縦移動か決める
+    /// </summary>
+    enum Track
+    {
+        Holizontal,
+        Vertual,
+    }
+
+    /// <summary>
+    /// 親子関係の設定 
+    /// </summary>
+    enum Node
+    {
+        Parent,
+        Child,
     }
 }
