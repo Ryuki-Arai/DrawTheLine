@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -15,7 +13,7 @@ public class PowerUP : Item
         text.GetComponent<TextMeshPro>();
         text.text = count.ToString();
     }
-    public override void Action(GameObject obj)
+    public override void Action()
     {
         GameSystem.Runner.Spawn(childRunner, spawnPos, count);
     }
