@@ -115,7 +115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a968e6c5e51d8c64ead3ac6448875e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 10
+  childRunner: {fileID: 0}
+  spawnPos: {fileID: 0}
+  maxCount: 0
+  text: {fileID: 0}
+  spawnPoint: {fileID: 0}
 --- !u!1 &8093670001132577135
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '10
+  m_text: '00
 
 '
   m_isRightToLeft: 0
