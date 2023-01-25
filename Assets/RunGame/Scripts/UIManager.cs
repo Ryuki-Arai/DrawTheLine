@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] Slider _slider;
+    [SerializeField] TMP_Text _text;
     [SerializeField] Transform _goal;
     [SerializeField] GameObject _pausePanel;
     [SerializeField] GameObject _crearPanel;
@@ -16,6 +18,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _slider.GetComponent<Slider>();
+        _text.GetComponent<TMP_Text>();
         _slider.maxValue = Vector2.Distance(GameSystem.ChildRunner[0].transform.position,_goal.position);
         _pausePanel.SetActive(false);
         _crearPanel.SetActive(false);
@@ -24,7 +27,8 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameSystem.ChildRunner.Count > 0)_slider.value = _slider.maxValue - Vector2.Distance(GameSystem.ChildRunner[0].transform.position, _goal.position);
+        if(GameSystem.Runner)_slider.value = _slider.maxValue - Vector2.Distance(GameSystem.Runner.transform.position, _goal.position);
+        _text.text = $"${ GameSystem.Instance.Coin.ToString("N0")}";
         _crearPanel.SetActive(GoalCheck());
     }
 
@@ -34,10 +38,10 @@ public class UIManager : MonoBehaviour
         {
             if (!go.OnGoal)
             {
-                return false;
+                return false && GameSystem.Runner.OnGoal;
             }
         }
-        return true;
+        return true && GameSystem.Runner.OnGoal;
     }
 
     public void OnPause()
