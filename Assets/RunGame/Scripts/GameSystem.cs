@@ -22,11 +22,11 @@ public class GameSystem
     public void SetItem(Item item) { _item.Add(item); }
     public void DeleteItem(Item item) { _item.Remove(item); }
 
-    int _point;
-    public int Point
+    int _coin;
+    public int Coin
     {
-        get => _point;
-        set => _point = value;
+        get => _coin;
+        set => _coin = value;
     }
 
     public void RemoveData()
