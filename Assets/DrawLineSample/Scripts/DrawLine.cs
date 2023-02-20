@@ -16,7 +16,7 @@ public class DrawLine : MonoBehaviour
     float lineWidth = 0.5f;
     
     [SerializeField, Tooltip("“–‚½‚è”»’è")]
-    bool _useCollider;
+    bool _useGravity;
     
     [SerializeField, Tooltip("‘‚¢‚½ü‚ğ©“®“I‚ÉÁ‹‚·‚é‚©")]
     bool _deleteLine;
@@ -48,6 +48,7 @@ public class DrawLine : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             _mIndex++;
+            _line.RB2D.bodyType = _useGravity ?  RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
         }
     }
 
@@ -64,7 +65,7 @@ public class DrawLine : MonoBehaviour
         _lr.startWidth = lineWidth;
         _lr.material = marerials[_mIndex % marerials.Length];
         var _ec2d = obj.GetComponent<EdgeCollider2D>();
-        _ec2d.enabled = _useCollider;
+        _ec2d.enabled = _useGravity;
         _ec2d.edgeRadius = lineWidth / 2;
     }
 }
