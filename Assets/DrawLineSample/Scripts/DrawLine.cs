@@ -14,8 +14,11 @@ public class DrawLine : MonoBehaviour
     
     [SerializeField, Tooltip("線の太さ"),Min(0.05f)] 
     float lineWidth = 0.5f;
-    
+
     [SerializeField, Tooltip("当たり判定")]
+    bool _collisionDetect;
+
+    [SerializeField, Tooltip("重力適用")]
     bool _useGravity;
     
     [SerializeField, Tooltip("書いた線を自動的に消去するか")]
@@ -65,7 +68,7 @@ public class DrawLine : MonoBehaviour
         _lr.startWidth = lineWidth;
         _lr.material = marerials[_mIndex % marerials.Length];
         var _ec2d = obj.GetComponent<EdgeCollider2D>();
-        _ec2d.enabled = _useGravity;
+        _ec2d.enabled = _collisionDetect;
         _ec2d.edgeRadius = lineWidth / 2;
     }
 }

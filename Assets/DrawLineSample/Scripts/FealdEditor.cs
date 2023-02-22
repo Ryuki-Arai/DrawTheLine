@@ -1,7 +1,7 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 
-#if UNITY_EDITOR
 [CustomEditor(typeof(DrawLine))]
 public class FealdEditor : Editor
 {

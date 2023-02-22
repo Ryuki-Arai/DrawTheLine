@@ -11,7 +11,7 @@ public class Line : MonoBehaviour
     LineRenderer _lr;
     EdgeCollider2D _ec2d;
     Rigidbody2D _rb2d;
-    public Rigidbody2D RB2D { get { return _rb2d; }  set { _rb2d = value; } } 
+    public Rigidbody2D RB2D { get => _rb2d; set => _rb2d = value;  } 
     List<Vector3> lineVec = new List<Vector3>();
     List<Vector2> edgeVec = new List<Vector2>();
     List<float> pointTime = new List<float>();
