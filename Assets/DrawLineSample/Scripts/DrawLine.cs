@@ -51,7 +51,7 @@ public class DrawLine : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             _mIndex++;
-            _line.RB2D.bodyType = _useGravity ?  RigidbodyType2D.Dynamic : RigidbodyType2D.Static;
+            _line.RB2D.bodyType = _useGravity ?  RigidbodyType2D.Dynamic : RigidbodyType2D.Kinematic;
         }
     }
 
