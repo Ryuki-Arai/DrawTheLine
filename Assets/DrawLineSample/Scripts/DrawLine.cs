@@ -33,6 +33,13 @@ public class DrawLine : MonoBehaviour
     Line _line;
     float _pointTime;
 
+    Camera _camera;
+
+    private void OnEnable()
+    {
+        _camera ??= Camera.main;
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -43,7 +50,9 @@ public class DrawLine : MonoBehaviour
         else if (Input.GetMouseButton(0))
         {
             _pointTime += Time.deltaTime;
-            var point = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var input = Input.mousePosition;
+            input.z = -_camera.transform.localPosition.z;
+            var point = _camera.ScreenToWorldPoint(input);
             point.z = 0f;
             if (_line) _line.AddPoints(point, _pointTime);
             else CreateLine();
